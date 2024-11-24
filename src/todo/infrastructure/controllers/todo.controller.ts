@@ -9,14 +9,15 @@ import {
 } from '@nestjs/common';
 import { TodoService } from '../../core/domain/services/todo.service';
 import { Todo } from '../../core/domain/interface/todo.interface';
+import { CreateTodoDto } from '../../dto/create-todo.dto';
 
 @Controller('todos')
 export class TodoController {
   constructor(private readonly todoService: TodoService) {}
 
   @Post()
-  create(@Body('text') text: string): Todo {
-    return this.todoService.create(text);
+  create(@Body() createTodoDto: CreateTodoDto): Todo {
+    return this.todoService.create(createTodoDto.text);
   }
 
   @Get()
