@@ -42,6 +42,8 @@ npm install
 PORT=3000
 ```
 
+However the service is runinng in Render you can try it in anytime.
+
 ### Running the Application
 
 1. Start the application:
